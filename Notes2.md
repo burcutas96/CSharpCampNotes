@@ -1,4 +1,6 @@
 * <a href="#typepattern">Type pattern</a>
+* <a href="#varpattern">Var pattern</a>
+* <a href="#typevarpattern">Type pattern ve var pattern üzerine kritik</a>
 <br><br>
 
 
@@ -50,6 +52,82 @@ class içerisinde erişebiliyoruz ama üzerinde herhangi bir işlem yapamıyoruz
 Örneğin aşağıdaki işlemi yapamayız: <br>
 Console.WriteLine(name);
 </p>
+<br><br>
+
+
+<h2 id="varpattern">Var pattern</h2>
+<p>
+Var pattern, type pattern'ın bir üst versiyonudur diyebiliriz. Object türüne atanmış bir veriyi type 
+pattern ile kendi öz türüne çıkarmak istiyorsak, sorguladığımız tip yerine var keyword'ünü yazabiliriz. 
+Böylelikle türü sorgulamamıza gerek kalmıyor. Var keyword'ü verinin türüne bürünüyor. 
+</p>
+
+```c#
+object x = "Bugün hava yağmurlu";
+if (x is var newValue)
+{
+  Console.WriteLine(newValue);
+}
+```
+<p>
+Ama bu pattern'daki türe bürünme işlemi runtime'da oluyor. Dolayısıyla normal var keyword'ü ile 
+var pattern'daki var keyword'ü arasında davranış farkı vardır.
+</p>
+<p>
+!!! Normal var keyword'ü: Compiler zamanında türü belirlenecektir. <br>
+  var pattern'daki var keyword'ü: Runtime'da türü belirlenecektir.
+</p>
+
+```c#
+var y = 1236   //Compiler zamanında türü belirlenir.
+object x = "Bugün hava yağmurlu";
+if (x is var newValue)    //Runtime'da türü belirlenir.
+{
+  Console.WriteLine(newValue);
+}
+```
+<p>
+!!! Bu pattern dynamic keyword'ü ile kullanılamıyor. 
+Çünkü böyle bir desen yok. Kullanılması halinde hata alınacaktır.
+</p>
+
+```c#
+object x = "Bugün hava yağmurlu";
+if (x is dynamic newValue)   //Yanlış kullanım
+{
+  Console.WriteLine(newValue); 
+}
+```
+
+<h2 id="typevarpattern">Type pattern ve var pattern üzerine kritik</h2>
+<p>
+Her iki pattern'ı da if bloklarına yazmadan kullanabiliriz. 
+</p>
+
+```c#
+object x = "Gençay";
+bool result1 = x is string m1;
+Console.WriteLine(m1);   //Hata alınacak
+
+bool result2 = x is var m2;
+Console.WriteLine(m2);
+```
+
+<p>
+Yukarıdaki örnekte de belirtildiği üzere type pattern ile cast ettiğimiz m1 değişkenini consol'a yazdırmak 
+istediğimizde hata fırlatılacaktır. Çünkü x değişkeninin türü string olmayabilir ve string olmadığı durumda
+bize null değerini dönderecektir. Bu null dönme ihtimalinden dolayı m1'i dışarıda kullanamayız. 
+Bu yüzden type pattern'ı if blokları ile kullanmamız daha doğru olacaktır.
+</p>
+
+<p>
+Var pattern'ı uyguladığımız diğer yazdırma işleminde ise bir hata alınmayacaktır. Çünkü var keyword'ü 
+x değişkeninin türü hangi tür ise o türe bürünecektir. Dolayısıyla null dönme ihtimali yoktur. 
+Bu sebeple de m2 değişkenini consol'a yazdırmak istediğimizde bir hata ile karşılaşılmayacaktır.
+</p>
+
+
+
 
 
 
