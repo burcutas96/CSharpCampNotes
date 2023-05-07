@@ -1,6 +1,8 @@
 * <a href="#typepattern">Type pattern</a>
 * <a href="#varpattern">Var pattern</a>
 * <a href="#typevarpattern">Type pattern ve var pattern üzerine kritik</a>
+* <a href="#patternmatching">C# 9.0 Pattern Matching Enhancements</a>
+
 <br><br>
 
 
@@ -98,6 +100,8 @@ if (x is dynamic newValue)   //Yanlış kullanım
   Console.WriteLine(newValue); 
 }
 ```
+<br><br>
+
 
 <h2 id="typevarpattern">Type pattern ve var pattern üzerine kritik</h2>
 <p>
@@ -112,19 +116,34 @@ Console.WriteLine(m1);   //Hata alınacak
 bool result2 = x is var m2;
 Console.WriteLine(m2);
 ```
-
 <p>
 Yukarıdaki örnekte de belirtildiği üzere type pattern ile cast ettiğimiz m1 değişkenini consol'a yazdırmak 
 istediğimizde hata fırlatılacaktır. Çünkü x değişkeninin türü string olmayabilir ve string olmadığı durumda
 bize null değerini dönderecektir. Bu null dönme ihtimalinden dolayı m1'i dışarıda kullanamayız. 
 Bu yüzden type pattern'ı if blokları ile kullanmamız daha doğru olacaktır.
 </p>
-
+<br>
 <p>
 Var pattern'ı uyguladığımız diğer yazdırma işleminde ise bir hata alınmayacaktır. Çünkü var keyword'ü 
 x değişkeninin türü hangi tür ise o türe bürünecektir. Dolayısıyla null dönme ihtimali yoktur. 
 Bu sebeple de m2 değişkenini consol'a yazdırmak istediğimizde bir hata ile karşılaşılmayacaktır.
 </p>
+<br><br>
+
+
+<h2 id="patternmatching">C# 9.0 Pattern Matching Enhancements</h2>
+<p>
+C# 9.0 sürümü ile gelen pattern'lardır. Bu sürüm ile birlikte gelen 4 tane pattern'ımız vardır.<br>
+I. Simple Type Pattern <br>
+II. Relational Pattern <br>
+III. Logical Pattern <br>
+IV. Not Pattern <br>
+</p>
+<br><br>
+
+
+
+
 
 
 
