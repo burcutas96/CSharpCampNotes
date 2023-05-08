@@ -5,6 +5,7 @@
 * <a href="#simpletypepattern">Simple Type Pattern</a>
 * <a href="#relationalpattern">Relational Pattern</a>
 * <a href="#logicalpattern">Logical Pattern</a>
+* <a href="#notpattern">Not Pattern</a>
 
 <br><br>
 
@@ -142,7 +143,7 @@ II. Relational Pattern <br>
 III. Logical Pattern <br>
 IV. Not Pattern <br>
 </p>
-<br><br>
+<br>
 
 
 <h2 id="simpletypepattern">I. Simple Type Pattern</h2>
@@ -260,7 +261,28 @@ string result = number switch
     not 51 => "51 değil"
 }
 ```
-
+<br><br>
+      
+      
+<h2 id="notpattern">IV. Not Pattern</h2>
+<p>not operatörünün kullanılabildiği nesnedir. not operatörü aslında logical pattern ile gelen 'değilse' mantığını 
+kullandığımız bir operatördür ancak diğer yandan da not pattern altında değerlendirdiğimiz bir keyword'dür.      
+</p>
+      
+```c#
+object obj = new Goggles();
+if (obj is not Technologic)   //obj değişkeninin türü Technologic değilse bu scope çalışır.
+{
+    //....                 
+}
+```
+      
+      
+      
+      
+      
+      
+      
 
 
 
