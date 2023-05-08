@@ -234,9 +234,32 @@ If, bütün karşılaştırmaları yapabilmektedir. Switch ise normal şartlarda
 versiyonu ile gelen relational pattern sayesinde diğer kıyaslamaları da yapabilmektedir.
 </p>
 <br><br>
+
  
-
-
+<h2 id="logicalpattern">III. Logical Pattern</h2>
+<p>
+Programlamaya mantıksal bir desen getiren pattern'dır. Bu pattern sayesinde and, or ve not gibi 
+mantıksal operatörleri kullanabilmekteyiz.       
+</p>
+      
+```c#
+string GetProduct(IProduct product) => p switch
+{
+    Technologic or Computer => "Teknolojik",
+    Goggles => "Gözlük"
+}
+```
+<p>Logical pattern, relational pattern ile oldukça uyumludur.</p>
+  
+```c#
+int number = 60;
+string result = number switch 
+{
+    > 10 and < 50 => "10'dan büyük ve 50'den küçük",
+    > 50 or < 100 and 60 => "50'den büyük veya 100'den küçük ve 60'a eşit",
+    not 51 => "51 değil"
+}
+```
 
 
 
