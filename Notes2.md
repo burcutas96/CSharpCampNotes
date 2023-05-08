@@ -3,6 +3,8 @@
 * <a href="#typevarpattern">Type pattern ve var pattern üzerine kritik</a>
 * <a href="#patternmatching">C# 9.0 Pattern Matching Enhancements</a>
 * <a href="#simpletypepattern">Simple Type Pattern</a>
+* <a href="#relationalpattern">Relational Pattern</a>
+* <a href="#logicalpattern">Logical Pattern</a>
 
 <br><br>
 
@@ -142,6 +144,7 @@ IV. Not Pattern <br>
 </p>
 <br><br>
 
+
 <h2 id="simpletypepattern">I. Simple Type Pattern</h2>
 <p>
 Bir değişken içerisindeki değerin belirli bir türde olup olmadığını hızlı bir şekilde kontrol etmemizi sağlayan desendir.
@@ -201,6 +204,37 @@ string GetProduct(IProduct product) => p switch
     Goggles => "Gözlük"
 }
 ```
+<br><br>
+
+
+<h2 id="relationalpattern">II. Relational Pattern</h2>
+<p>
+Switch özü itibariyle sadece eşitlik durumunu inceleyen bir akış kontrol şemasıydı. Ancak Relational 
+pattern sayesinde artık diğer karşılaştırmaları da yapabilmekteyiz. 
+</p>
+<br>
+<p>
+Relational pattern; <, >, <=, >= operatörlerini switch'de kullanmamızı 
+sağlayan, bu nitelikleri switch'e kazandıran pattern'dır.
+</p>
+  
+```c#
+int number = 111;
+string result = number switch 
+{
+    < 50 => "50'den küçük",
+    > 50 => "50'den büyük",
+    50 => "50'ye eşit"
+    _ => "Hiçbiri"
+}
+```
+<h3>If ile Switch arasındaki fark nedir? - (Mülakat Sorusu)</h3>
+<p>
+If, bütün karşılaştırmaları yapabilmektedir. Switch ise normal şartlarda sadece eşitlik durumuna bakmaktayken C# 9.0
+versiyonu ile gelen relational pattern sayesinde diğer kıyaslamaları da yapabilmektedir.
+</p>
+<br><br>
+ 
 
 
 
