@@ -2,6 +2,7 @@
 * <a href="#varpattern">Var pattern</a>
 * <a href="#typevarpattern">Type pattern ve var pattern üzerine kritik</a>
 * <a href="#patternmatching">C# 9.0 Pattern Matching Enhancements</a>
+* <a href="#simpletypepattern">Simple Type Pattern</a>
 
 <br><br>
 
@@ -141,10 +142,65 @@ IV. Not Pattern <br>
 </p>
 <br><br>
 
+<h2 id="simpletypepattern">I. Simple Type Pattern</h2>
+<p>
+Bir değişken içerisindeki değerin belirli bir türde olup olmadığını hızlı bir şekilde kontrol etmemizi sağlayan desendir.
+</p>
 
+<p>
+C# 9.0'dan önce type pattern ile yapılan tür bildirimlerinin yanına değişken adı tanımlaması yahut discard 
+ifadesinin kullanılması zaruruiydi. C# 9.0 ile bu gereksiz zorunluluk ortadan kaldırıldı ve direkt olarak 
+tür kontrol işlemine odaklanılması sağlanmıştır.
+</p>
 
+<p>
+Aşağıdaki örnekte switch ile beraber type pattern uygulanarak değişkenin türü belirlenmeye çalışılmıştır. Ve değiken, 
+belirlenen türde p isimli bir değişkene atanmıştır. Ancak biz p isimli değişkeni herhangi bir yerde kullanmayacaksak simple type 
+pattern ile gelen kolaylık sayesinde bu p isimli değişkeni oluşturmamıza gerek kalmıyor.
+</p>
 
+```c#
+object obj = new Person();
+switch (obj)
+{
+    case Person p:
+        //....
+        break;
+}
+```
+<p>
+Yukarıdaki örneğin simple type pattern kullanılarak çözülmüş hâli:
+</p>
 
+```c#
+object obj = new Person();
+switch (obj)
+{
+    case Person:
+        //....
+        break;
+}
+```
+<br>
+<p>Başka bir örnek</p>
+
+```c#
+string GetProduct(IProduct product) => p switch
+{
+    Technologic _ => "Teknolojik",
+    Computer _ => "Bilgisayar",
+    Goggles _ => "Gözlük"
+}
+```
+
+```c#
+string GetProduct(IProduct product) => p switch
+{
+    Technologic => "Teknolojik",
+    Computer => "Bilgisayar",
+    Goggles => "Gözlük"
+}
+```
 
 
 
