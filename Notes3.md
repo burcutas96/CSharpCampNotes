@@ -7,9 +7,13 @@
 <br><br>
 
 <h2 id="compiler">I. Compiler Hataları</h2>
-<p>- Programlama dili kurallarına aykırı olan hatalardır.</p>
+<p>- Programlama dili kurallarına aykırı olan syntax hatalarıdır.</p>
 <p>- Özellikle gelişmiş editörler (VS) sayesinde söz dizimi hataları derlemeye gerek bile kalmaksızın fark edilebilmektedir.</p>
-<p>- Hatanın bulunduğu satır derleyici tarafından rapor edilir. Gelişmiş editörlerde ise hataya nokta atışı yapılarak hatanın nerde olduğunu bize direkt söylerler.</p>
+<p>- Hatanın bulunduğu satır derleyici tarafından rapor edilir. Gelişmiş editörlerde ise hataya nokta atışı yapılarak hatanın nerde olduğunu bize direkt söyler.</p>
+<p>Örneğin;</p>
+<img src="img/syntaxerror3.png"/>
+<img src="img/syntaxerror2.png"/>
+<img src="img/syntaxerror1.png"/>
 
 
 
