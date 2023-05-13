@@ -7,6 +7,7 @@
     * <a href="#trycatchparameters">Try-catch hata parametreleri</a>
     * <a href="#catch">Peki biz bu hataları nasıl yakalayacağız?</a>
     * <a href="#multiplecatches">Birden çok catch durumu</a>
+    * <a href="#finally">Finally bloğu</a>
 * <a href="#logical">Logical Hatalar</a> 
 <br><br>
 
@@ -190,7 +191,22 @@ tanımlanmasında Exception türü de kullanılacaksa yukarıdaki örnekteki gib
 <p>!!! Exception türünün en sonda tanımlanmasının bir başka sebebi ise; Exception türü, bütün hata türlerini karşılayabildiği için diğer catch'lere / türlere 
 bakma gereği duymamasıdır.
 </p>
+<br>
 
+* <h3 id="finally">Finally bloğu</h3>
+<p>Finally bloğu try-catch yapılanmasında hata alınsada alınmasada her iki durumda da tetiklenmesi / çalıştırılması gereken kodları yazdığımız bloktur.</p>
+
+```c# 
+try
+{
+}
+catch (Exception exception)
+{
+}
+finally
+{
+}
+```
 
 
 
