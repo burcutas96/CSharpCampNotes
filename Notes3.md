@@ -240,6 +240,37 @@ catch(Exception ex) when (ex is FormatException or NullReferenceException)
     //FormatException ve NullReferenceException hata türleri için çalıştırılacak ortak kodlar.
 }
 ```
+<br><br>
+
+
+<h2 id="compiler">III. Logical Hatalar</h2>
+<p>- Programın mantığında, akışında, algoritmasında, stratejisinde birtakım şeylerin yanlış hesaplanması, düşünülmesi, tasarlanması neticesinde alınan hatalardır.</p>
+
+<p>- Syntax'ta, kodun derlenmesinde hatta çalışma zamanında bir hata yoktur. Kod çalışır ve sonuç verir lakin sonuçlar hatalıdır. Beklenen sonuçlar elde edilmez.</p>
+
+<p>- Mantıksal hatalar ancak test süreçlerinde yahut müşteri kullanımında tespit edilebilir.</p>
+
+<p>- Bazen hesaplanması gereken bir değerin eksik hesaplanmasıyla, bazen yanlış katsayının kullanılmasıyla, bazen de mantıksal işlemde yapılan bir hatayla ortaya çıkabilir.</p>
+
+<p>- Günlük hayattaki karşılığı "bug"dur. Bug terimi, mantık hataları için kullanılan bir terimdir.</p>
+
+<p>- Tespiti çok zor olduğu için hata türleri arasındaki en tehlikeli hatadır. Çünkü hatayı bulmak adına bir derleyici ya da editör size yardımcı olmuyor. Her şey bilgisayar 
+açısından normal ancak sonuçlar beklediğimiz şekilde üretilmiyor. 
+</p>
+
+<p>- Mantıksal hatalarda bazen tek çözüm debug'dır.</p>
+
+<p>Örneğin; projemizde iki sayının aritmetik ortalamasını almak istiyoruz.</p>
+
+```c# 
+int i1 = 15, i2 = 25;
+Console.WriteLine(i1 + i2);
+```
+<p>
+Yukarıdaki gibi bir işlem yaparsak eğer derlemede veya çalışma zamanında bir hata almayacağız ancak işlem sonucunda yanlış bir hesaplama yapıldığını fark etmiş olucaz.
+Çünkü biz, amacımızı doğru bir şekilde karşılayabilen bir kodlama yapmadık. İki sayının sadece toplamını ekrana yazdırdık ancak bizim istediğimiz iki sayının aritmetik ortalamasını bulmaktı. Bu yüzden bu işlemde mantıksal bir hata yapmış olduk.
+</p>
+
 
 
 
