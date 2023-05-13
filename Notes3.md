@@ -8,6 +8,7 @@
     * <a href="#catch">Peki biz bu hataları nasıl yakalayacağız?</a>
     * <a href="#multiplecatches">Birden çok catch durumu</a>
     * <a href="#finally">Finally bloğu</a>
+    * <a href="#when">When keyword'ü ile hata filtreleme</a>
 * <a href="#logical">Logical Hatalar</a> 
 <br><br>
 
@@ -207,7 +208,38 @@ finally
 {
 }
 ```
+<br>
 
+* <h3 id="when">When keyword'ü ile hata filtreleme</h3>
+<p>Try-catch bloklarına when keyword'ü ile şart uygulayabilmekteyiz.</p>
+<p>Hem türün hem de şartın sağlanması durumunda ilgili catch bloğu çalıştırılacaktır.</p>
+
+```c# 
+try
+{
+    int sayi1 = 0, sayi2 = 10;
+    int sonuc = sayi2 / sayi1;  
+}
+catch (DivideByZeroException exception) when (3 == 3)
+{
+}
+catch (DivideByZeroException exception) when (5 == 5)
+{
+}
+```
+<p>Catch parantezinin içindeki hatanın türünü bildirmek zorunda değiliz. Yani catch parantezini oluşturmadan da when şartını oluşturabiliriz.</p>
+<p>Farklı bir kullanım şekli:</p>
+
+```c# 
+try
+{
+    int.Parse("gençay");  
+}
+catch(Exception ex) when (ex is FormatException or NullReferenceException)
+{
+    //FormatException ve NullReferenceException hata türleri için çalıştırılacak ortak kodlar.
+}
+```
 
 
 
