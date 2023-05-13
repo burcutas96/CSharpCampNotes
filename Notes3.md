@@ -243,7 +243,7 @@ catch(Exception ex) when (ex is FormatException or NullReferenceException)
 <br><br>
 
 
-<h2 id="compiler">III. Logical Hatalar</h2>
+<h2 id="logical">III. Logical Hatalar</h2>
 <p>- Programın mantığında, akışında, algoritmasında, stratejisinde birtakım şeylerin yanlış hesaplanması, düşünülmesi, tasarlanması neticesinde alınan hatalardır.</p>
 
 <p>- Syntax'ta, kodun derlenmesinde hatta çalışma zamanında bir hata yoktur. Kod çalışır ve sonuç verir lakin sonuçlar hatalıdır. Beklenen sonuçlar elde edilmez.</p>
