@@ -4,23 +4,51 @@
 #### Temelde üç tane döngümüz vardır. Bunlar for döngüsü, while döngüsü ve do while döngüsüdür. (Foreach bir döngü değildir. Foreach bir iterasyondur.)
 <br>
 
-* <a href="#whichcycle">Hangi döngü nerede kullanılır?</a>
+* <a href="#which">Hangi döngü nerede kullanılır?</a>
+* <a href="#forloop">For döngüsü</a>
 
 <br><br>
 
-<h2 id="whichcycle">Hangi döngü nerede kullanılır?</h2>
+<h2 id="which">Hangi döngü nerede kullanılır?</h2>
 <p>"Hangi döngü nerede kullanılır?" sorusu yanlış bir sorudur. Doğru sorunun "Hangi döngü nereye / hangi senaryoya daha çok yakışır." şeklinde olması gerekiyor.</p>
 <p>
   Biz bütün senaryolarla bütün döngüleri kullanabiliriz. Çünkü bu döngülerin hepsi bir kombinasyona bağlı şekilde çalıştıkları için en nihayetinde birbirlerinin yerine kullanılabilirler.
   Ancak hangi senaryoya hangi döngü daha çok yakışıyorsa daha kolay, basit bir şekilde yapılabiliyorsa o döngüyü kullanmamız daha doğru olacaktır.
 </p>
+<br><br>
 
+<h2 id="forloop">I. For döngüsü</h2>
+<p>Prosedürel programlamada, döngü yapılarından birisi for döngüsüdür. Genellikle ardışık işlemlerde kullanılan bir döngü yapılanmasıdır.</p>
+<img src="img/Screenshot 2023-05-15 091807.png"/>
+<p>
+For döngüsündeki üç parametreninde parantezlerin içinde tanımlanması zorunlu değildir. Peki zorunlu değilse neden böyle bir şey oluşturuldu? Çünkü bir algoritma oluşturuyoruz 
+ve bu algoritmada kullanılan parametrelerin onun kalıbında, içinde olması kontrol açısından daha kolaylaştırıcıdır. Yani sadece for döngüsünün parametrelerinde kullanacağım 
+değişkenleri başka bir yerde oluşturmak yerine tek bir merkezde oluşturup orada yönetmek daha kolay olacaktır.
+</p>
+<p>- Örnek: Klavyeden girilen sayının faktörüyelini ekrana yazdıran programı yapınız.</p>
 
+```c#
+Console.Write("Bir sayı giriniz: ");
+int sayi = int.Parse(Console.ReadLine());
+int faktoriyel = 1;
+string ifade = "";
 
+for (int i = sayi; i > 0; i--) 
+{
+    faktoriyel *= i;
+    ifade += i + (i == 1 ? " = " : " x ");
+}
+Console.WriteLine("Faktöriyel: " + ifade + faktoriyel);
+```
+<p>For döngüsü varyasyonu:</p>
 
-
-
-
+```c#
+for (int i1 = 0, i2 = 0; i1 < 10 && i2 < 5; i1++ , i2++)
+{
+    Console.WriteLine("i1'in değeri: " + i1);
+    Console.WriteLine("i2'nin değeri: " + i2);
+}
+```
 
 
 
