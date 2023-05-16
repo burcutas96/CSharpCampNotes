@@ -8,8 +8,10 @@
 * <a href="#forloop">For döngüsü</a>
 * <a href="#whileloop">While döngüsü</a>
 * <a href="#dowhileloop">Do While döngüsü</a>
-
+* <a href="#loopwithoutscope">Döngüleri scope'suz kullanma</a>
+* <a href="#infiniteloop">Sonsuz döngüler</a>
 <br><br>
+
 
 <h2 id="which">Hangi döngü nerede kullanılır?</h2>
 <p>"Hangi döngü nerede kullanılır?" sorusu yanlış bir sorudur. Doğru sorunun "Hangi döngü nereye / hangi senaryoya daha çok yakışır." şeklinde olması gerekiyor.</p>
@@ -18,6 +20,7 @@
   Ancak hangi senaryoya hangi döngü daha çok yakışıyorsa daha kolay, basit bir şekilde yapılabiliyorsa o döngüyü kullanmamız daha doğru olacaktır.
 </p>
 <br><br>
+
 
 <h2 id="forloop">I. For döngüsü</h2>
 <p>Prosedürel programlamada, döngü yapılarından birisi for döngüsüdür. Genellikle ardışık işlemlerde kullanılan bir döngü yapılanmasıdır.</p>
@@ -53,6 +56,7 @@ for (int i1 = 0, i2 = 0; i1 < 10 && i2 < 5; i1++ , i2++)
 ```
 <br><br>
 
+
 <h2 id="whileloop">II. While döngüsü</h2>
 <p>While döngüsü sadece şarta bağlı bir döngüdür. Şart doğrulandıkça tetiklenir.</p>
 <p>While döngüsü, programlamanın ilk tasarlanmış döngüsüdür. For'a kıyasla daha ilkel ve sade bir döngüdür.</p>
@@ -73,6 +77,7 @@ Console.WriteLine(sonuc);
 ```
 <br><br>
 
+
 <h2 id="dowhileloop">III. Do While döngüsü</h2>
 <p>While döngüsü, önce şarta bakıp sonra kodu çalıştırırken do while döngüsü önce kodu çalıştırıp daha sonra şarta bakar.</p>
 <p>While ile yapılan kontrolde şart true olursa döngü tetiklenecek, false olursa hiçbir zaman tetiklenmeyecektir.</p>
@@ -85,6 +90,45 @@ do
     
 }while(sart)
 ```
+<br><br>
+
+
+<h2 id="loopwithoutscope">Döngüleri scope'suz kullanma</h2>
+<p>Eğer döngülerde tek satırlık bir işlem yapacaksak döngümüzü scope kullanmadan inşa edebiliriz.</p>
+<p>- For döngüsü için örnek:</p>
+
+```c#
+for (int i = 0; i < 10; i++)
+    Console.WriteLine("Gençay");
+```
+<p>- While döngüsü için örnek:</p>
+
+```c#
+while (true)
+    Console.WriteLine("Hüseyin");
+```
+<p>- Do while döngüsü için örnek:</p>
+
+```c#
+do
+    Console.WriteLine("Hilmi");
+while (true);
+```
+<br><br>
+
+
+<h2 id="infiniteloop">Sonsuz döngüler</h2>
+<p>
+Sonsuz döngüler; bazen bizim için farkında olmadan, iradesizce girmiş olduğumuz bir hatayı tarif ederken, bazen de bazı operasyonlarda 
+irademizle, kasıtlı bir şekilde kullandığımız bir durumu tarif etmektedir.
+</p>
+<p>
+Bir döngünün kombinasyonunun sonsuza kadar olma ihtimali, durumu varsa o döngü hiçbir zaman sonlanmayacağından dolayı sonsuz kere 
+çalışacak yani sonsuz bir döngüye girecektir. İşte bu döngülere sonsuz döngü denilmektedir.
+</p>
+
+
+
 
 
 
