@@ -6,6 +6,7 @@
 
 * <a href="#which">Hangi döngü nerede kullanılır?</a>
 * <a href="#forloop">For döngüsü</a>
+* <a href="#whileloop">While döngüsü</a>
 
 <br><br>
 
@@ -49,6 +50,32 @@ for (int i1 = 0, i2 = 0; i1 < 10 && i2 < 5; i1++ , i2++)
     Console.WriteLine("i2'nin değeri: " + i2);
 }
 ```
+<br><br>
+
+<h2 id="whileloop">II. While döngüsü</h2>
+<p>While döngüsü sadece şarta bağlı bir döngüdür. Şart doğrulandıkça tetiklenir.</p>
+<p>While döngüsü, programlamanın ilk tasarlanmış döngüsüdür. For'a kıyasla daha ilkel ve sade bir döngüdür.</p>
+<p>For döngüsü olmayan bir dil vardır. Mesela transact sql'de for döngüsü yoktur. Ancak bütün dillerde while döngüsü vardır.</p>
+<p>Genellikle sonsuz döngülerde ya da süreci bilinmeyen durumlarda kullanılan bir döngüdür. Ama yine de istediğimiz yerde kullanabiliriz.</p>
+<p>- Örnek: Klavyeden girilen sayının faktöriyelini hesaplayalım.</p>
+
+```c#
+Console.Write("Bir sayı giriniz: ");
+int sayi = int.Parse(Console.ReadLine());
+int sonuc = 1;
+
+while(sayi > 0)
+{
+    sonuc *= sayi--;  //sayinin değerini işleme aldıktan sonra bir azaltacak. Bu yüzden bir alt satırda sayi--; yazmamıza gerek kalmadı.
+}
+Console.WriteLine(sonuc);
+```
+
+
+
+
+
+
 
 
 
