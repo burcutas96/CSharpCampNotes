@@ -10,6 +10,7 @@
 * <a href="#dowhileloop">Do While döngüsü</a>
 * <a href="#loopwithoutscope">Döngüleri scope'suz kullanma</a>
 * <a href="#infiniteloop">Sonsuz döngüler</a>
+* <a href="#infiniteforloop">For ile sonsuz döngü</a>
 <br><br>
 
 
@@ -126,11 +127,49 @@ irademizle, kasıtlı bir şekilde kullandığımız bir durumu tarif etmektedir
 Bir döngünün kombinasyonunun sonsuza kadar olma ihtimali, durumu varsa o döngü hiçbir zaman sonlanmayacağından dolayı sonsuz kere 
 çalışacak yani sonsuz bir döngüye girecektir. İşte bu döngülere sonsuz döngü denilmektedir.
 </p>
+<br><br>
 
 
+<h2 id="infiniteforloop">For ile sonsuz döngü</h2>
+<p>For ile sonsuz döngü oluştururken dikkat etmemiz gereken bazı noktalar vardır.</p>
 
+```c#
+for (int i = 0; true; i++)
+{
+}
+```
+<p>
+Yukarıdaki örnek her ne kadar sonsuz bir döngü gibi görünse de aslında sonsuz bir döngü değildir. Çünkü başlangıç değişkenimizi birer birer 
+arttırdığımız için bu değer bir yerden sonra integer'ın değer aralığını aşacak ve program patlayacaktır. İşte bu yüzden sonlu bir döngü oluşturmuş oluyoruz. 
+</p>
+<br>
+<p>!!! Kritik: Eğer for döngüsü ile sonsuz bir döngü oluşturmak istiyorsak başlangıç değerini ve buna bağlı olarak artış azalış kısmını oluşturmamalıyız.</p>
 
+```c#
+for (; true;)   
+{
+}
+```
+<p>Yukarıdaki döngü sonsuz bir döngüyü ifade eder. Şart kısmındaki true değerini de yazmadan sonsuz bir döngü oluşturabiliriz.</p>
+<p>
+For yapılanmasında sonsuz bir döngüye girdiğimizde yapısal olarak bir zamanda sonra çıkmak isteyebiliriz. işte bu çıkma operasyonunu 
+manevratik keyword'ler ile de yapabiliriz ya da şartı bir şekilde kontrol edecek bir yapılanma ile de yapabiliriz. Örneğin;
+</p>
 
+```c#
+bool kosul = true;
+for (; kosul;)   
+{
+    if(true)   //Buraya (true'nun yerine) döngünün sonlaması için bir şart belirtiriz. 
+    {
+        kosul = !kosul;
+    }
+}
+```
+<p>
+Döngünün sonlanması için aradığımız durum, koşul her neyse onu if parantezinin içinde belirtiriz. Ve daha sonra döngünün 
+sonlanması için döngü içinde kontrol ettiğimiz değişkeni tam tersi değeriyle değiştiririz.
+</p>
 
 
 
