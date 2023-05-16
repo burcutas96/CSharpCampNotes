@@ -2,10 +2,10 @@
 * <a href="#varpattern">Var pattern</a>
 * <a href="#typevarpattern">Type pattern ve var pattern üzerine kritik</a>
 * <a href="#patternmatching">C# 9.0 Pattern Matching Enhancements</a>
-* <a href="#simpletypepattern">Simple Type Pattern</a>
-* <a href="#relationalpattern">Relational Pattern</a>
-* <a href="#logicalpattern">Logical Pattern</a>
-* <a href="#notpattern">Not Pattern</a>
+  * <a href="#simpletypepattern">Simple Type Pattern</a>
+  * <a href="#relationalpattern">Relational Pattern</a>
+  * <a href="#logicalpattern">Logical Pattern</a>
+  * <a href="#notpattern">Not Pattern</a>
 
 <br><br>
 
