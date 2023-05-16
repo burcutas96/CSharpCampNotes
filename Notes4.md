@@ -7,6 +7,7 @@
 * <a href="#which">Hangi döngü nerede kullanılır?</a>
 * <a href="#forloop">For döngüsü</a>
 * <a href="#whileloop">While döngüsü</a>
+* <a href="#dowhileloop">Do While döngüsü</a>
 
 <br><br>
 
@@ -70,9 +71,20 @@ while(sayi > 0)
 }
 Console.WriteLine(sonuc);
 ```
+<br><br>
 
+<h2 id="dowhileloop">III. Do While döngüsü</h2>
+<p>While döngüsü, önce şarta bakıp sonra kodu çalıştırırken do while döngüsü önce kodu çalıştırıp daha sonra şarta bakar.</p>
+<p>While ile yapılan kontrolde şart true olursa döngü tetiklenecek, false olursa hiçbir zaman tetiklenmeyecektir.</p>
+<p>Ancak do wihle döngüsünde şart true'da olsa false'da olsa kod, en az bir kere çalıştırılacaktır.</p>
 
-
+```c#
+do
+{
+    //....
+    
+}while(sart)
+```
 
 
 
