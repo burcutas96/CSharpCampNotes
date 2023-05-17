@@ -11,6 +11,9 @@
 * <a href="#loopwithoutscope">Döngüleri scope'suz kullanma</a>
 * <a href="#infiniteloop">Sonsuz döngüler</a>
 * <a href="#infiniteforloop">For ile sonsuz döngü</a>
+* <a href="#infinitewhileloop">While ile sonsuz döngü</a>
+* <a href="#infinitedowhileloop">Do while ile sonsuz döngü</a>
+* <a href="#foreach">Foreach bir döngü mü?</a>
 <br><br>
 
 
@@ -158,7 +161,7 @@ manevratik keyword'ler ile de yapabiliriz ya da şartı bir şekilde kontrol ede
 
 ```c#
 bool kosul = true;
-for (; kosul;)   
+for (;kosul;)   
 {
     if(true)   //Buraya (true'nun yerine) döngünün sonlaması için bir şart belirtiriz. 
     {
@@ -170,7 +173,52 @@ for (; kosul;)
 Döngünün sonlanması için aradığımız durum, koşul her neyse onu if parantezinin içinde belirtiriz. Ve daha sonra döngünün 
 sonlanması için döngü içinde kontrol ettiğimiz değişkeni tam tersi değeriyle değiştiririz.
 </p>
+<br><br>
 
+
+<h2 id="infinitewhileloop">While ile sonsuz döngü</h2>
+<p>
+While döngüsü yapısal olarak sonsuz bir döngüye girebilmek için zaten öncelikli bir hazırlığa
+sahip olan bir döngüdür. Bu sebeple while döngüsü, fıtrat olarak sonsuz döngüye en yakın döngüdür.
+</p>
+
+```c#
+while(true)  
+{
+    //...   
+}
+```
+<p>
+While döngüsü ile sonsuz bir döngü yukarıdaki gibi yapılır. Eğer kontrollü bir sonsuz döngü yapmak istiyorsak önceden 
+incelediğimiz for ile kontrollü sonsuz döngü yapma işlemindeki mantığı while döngüsünde de kullanırız.
+</p>
+<br><br>
+
+
+<h2 id="infinitedowhileloop">Do while ile sonsuz döngü </h2>
+<p>Do while ile sonsuz döngü aşağıdaki gibi yapılır.</p>
+
+```c#
+do
+{
+    //...
+    
+}while(true)  
+```
+<br><br>
+
+
+<h2 id="foreach">Foreach bir döngü mü?</h2>
+<p>Foreach bir döngü değildir, bir iterasyondur. Peki iterasyon ne demek, döngü'den farkı ne?</p> <br>
+<p>Döngü: Belirli bir kombinasyon eşliğinde çalışan, belirli bir şarta bağlı olan, periyodik işlemler gerçekleştiren yapılanmalardır.</p>
+<p>
+İterasyon: İterasyon mantığında ne kombinasyon ne de şart vardır. İterasyonda; sonraki veri, öteki veri anlamına gelen itere etme fiili vardır.
+Bir veri kümesi üzerinde işlem yapmamızı / verileri elde etmemizi sağlayan yapılanmadır. 
+</p>
+<p>
+Aralarındaki ayrı bir fark ise; herhangi bir veri kümesi üzerinde döngü ile dönerken istediğimiz noktadan 
+başlayabilirken iterasyonda böyle bir durum söz konusu değildir. İterasyon baştan başlar kümenin sonuna kadar gider.
+</p>
 
 
 
