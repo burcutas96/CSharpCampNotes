@@ -19,9 +19,14 @@ Yani direkt eyleme, bir fiiliyata odaklanan bir yapılanma varsa bu zaten bir op
 farklı amaçlara, modellemeye hizmet ediyorsa bu bir keyword'dür. (örneğin static, class keywordleri)
 </p>
 <p>Bunun için şöyle bir kanıya varabiliriz; Operatörler esasında bir keyword'dür ancak her keyword bir operatör değildir.</p>
+<br><br>
 
 
-
+# Manevratik komutlar
+#### Kodu durdurmak, devamını okumamak, var olan bir döngüden çıkış yapmak yahut komple metodu sonlandırmak için kullanılan komutlardır.
+#### Manevratik komutlar, yapamadığımız şeyleri yapmamızı sağlayan komutlar değildir. Yapabileceğimiz manevraları / kodun yönlendirmelerini daha efektif daha profesyonel bir şekilde yapmamızı sağlayan komutlardır.
+#### 4 tane manevratik komutlarımız vardır. Bunlar break, continue, return ve goto komutlarıdır.
+<br>
 
 
 
