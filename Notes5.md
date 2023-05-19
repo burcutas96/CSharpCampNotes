@@ -5,9 +5,9 @@
 <br>
 
 * <a href="#keywordvsoperator">Keywordlerin operatörlerle ne farkı vardır?</a>
-
-
 <br><br>
+
+
 <h2 id="keywordvsoperator">Keywordlerin operatörlerle ne farkı vardır?</h2>
 <p>Operatörler, esas olarak belirli bir operasyonu / eylemi üstlenen yapılardır.</p>
 <p>
@@ -27,6 +27,33 @@ farklı amaçlara, modellemeye hizmet ediyorsa bu bir keyword'dür. (örneğin s
 #### Manevratik komutlar, yapamadığımız şeyleri yapmamızı sağlayan komutlar değildir. Yapabileceğimiz manevraları / kodun yönlendirmelerini daha efektif daha profesyonel bir şekilde yapmamızı sağlayan komutlardır.
 #### 4 tane manevratik komutlarımız vardır. Bunlar break, continue, return ve goto komutlarıdır.
 <br>
+
+
+* <a href="#breakcommand">Break komutu nedir?</a>
+
+<br><br>
+
+
+<h2 id="breakcommand">Break komutu nedir?</h2>
+<p>Sadece switch case, foreach ve döngülerde kullanılabilen bir keyword'dür.</p>
+<p>Kullanıldığı yapıdan çıkış yapılmasını, kullanıldığı yapıyı sonlandırmayı sağlayan bir keyword'dür.</p>
+<p>Örneğin;</p>
+
+```c#
+switch (10)
+{
+    case 5:
+	//...
+	break;
+    case 10:
+	//...
+	break;
+}
+```
+
+
+
+
 
 
 
