@@ -2,9 +2,6 @@
 #### Keyword dediğimiz yapılanma, derleyici için önceden tanımlanmış ve özel anlamlara sahip olan anahtar sözcüklerdir. Belirli işlemleri, belirli operasyonları gerçekleştirmemizi sağlayan  operasyonel yapılanmalardır.
 #### Keywordler programlamanın temel yapı taşlarıdır. En atomik parçalarıdır.
 #### Derleyici için ön tanımlı olan, nerede, hangi amaca hizmet edeceği belli olan ve kod içerisinde hangi noktalarda çağrılabileceği, kullanılabileceği kurallarla sınırlandırılmış olan anahtar sözcüklerdir.   
-<br>
-
-* <a href="#keywordvsoperator">Keywordlerin operatörlerle ne farkı vardır?</a>
 <br><br>
 
 
@@ -30,30 +27,41 @@ farklı amaçlara, modellemeye hizmet ediyorsa bu bir keyword'dür. (örneğin s
 
 
 * <a href="#breakcommand">Break komutu nedir?</a>
+* <a href="#continuecommand">Continue komutu nedir?</a>
 
 <br><br>
 
 
 <h2 id="breakcommand">Break komutu nedir?</h2>
-<p>Sadece switch case, foreach ve döngülerde kullanılabilen bir keyword'dür.</p>
+<p>Döngülerde, switch case ve foreach yapılanmalarında kullanılabilen bir keyword'dür.</p>
 <p>Kullanıldığı yapıdan çıkış yapılmasını, kullanıldığı yapıyı sonlandırmayı sağlayan bir keyword'dür.</p>
 <p>Örneğin;</p>
 
 ```c#
-switch (10)
+for (int i = 0; i < 100; i++)
 {
-    case 5:
-	//...
-	break;
-    case 10:
-	//...
-	break;
+    if (i == 22)
+        break;
+    Console.WriteLine(i);
 }
 ```
+<br><br>
 
 
+<h2 id="continuecommand">Continue komutu nedir?</h2>
+<p>Sedece döngülerde ve foreach yapılanmasında kullanılabilen, erişilebilen bir keyword'dür.</p>
+<p>Amaç: Döngüde bir sonraki tura geçilmesini sağlar. Yani bir sonraki periyoda direkt geçiş sağlar.</p>
+<p>Continue komutunun altındaki kodlar çalıştırılmadan bir sonraki döngüye geçilecektir.</p>
+<p>- Örneğin, 1 ile 100 arasındaki 7'nin katı olmayan sayıları ekrana yazdıralım.</p>
 
-
+```c#
+for (int i = 1; i <= 100; i++)
+{
+    if (i % 7 == 0)
+        continue;
+    Console.WriteLine(i);
+}
+```
 
 
 
