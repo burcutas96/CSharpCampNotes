@@ -37,7 +37,7 @@ farklı amaçlara, modellemeye hizmet ediyorsa bu bir keyword'dür. (örneğin s
 <br><br>
 
 
-<h2 id="breakcommand">Break komutu nedir?</h2>
+<h2 id="breakcommand">I. Break komutu nedir?</h2>
 <p>Döngülerde, switch case ve foreach yapılanmalarında kullanılabilen bir keyword'dür.</p>
 <p>Kullanıldığı yapıdan çıkış yapılmasını, kullanıldığı yapıyı sonlandırmayı sağlayan bir keyword'dür.</p>
 <p>Örneğin;</p>
@@ -53,7 +53,7 @@ for (int i = 0; i < 100; i++)
 <br><br>
 
 
-<h2 id="continuecommand">Continue komutu nedir?</h2>
+<h2 id="continuecommand">II. Continue komutu nedir?</h2>
 <p>Sedece döngülerde ve foreach yapılanmasında kullanılabilen, erişilebilen bir keyword'dür.</p>
 <p>Amaç: Döngüde bir sonraki tura geçilmesini sağlar. Yani bir sonraki periyoda direkt geçiş sağlar.</p>
 <p>Continue komutunun altındaki kodlar çalıştırılmadan bir sonraki döngüye geçilecektir.</p>
@@ -70,14 +70,14 @@ for (int i = 1; i <= 100; i++)
 <br><br>
 
 
-<h2 id="returncommand">Return komutu nedir?</h2>
+<h2 id="returncommand">III. Return komutu nedir?</h2>
 <p>Metot içerisinde her yerde kullanılabilir, erişilebilir bir keyword'dür. İki işlevi vardır:</p>
 <p>1- Nerede çağrılırsa çağrılsın bulunduğu metottan çıkış yapar. Yani metodu sonlandırır.</p>
 <p>2- Metotlarda geriye bir değer döndürür.</p>
 <br><br>
 
 
-<h2 id="gotocommand">Goto komutu nedir?</h2>
+<h2 id="gotocommand">IV. Goto komutu nedir?</h2>
 <p>Kodun senkronizasyonunu bozup akışı ters istikamete almamızı sağlayan manevratik bir komuttur.</p>
 <p>Davranışsal olarak döngülere benzerler.</p>
 <p>Switch case yapılanmasında dahili olarak kullanılan bu komut, metot içerisinde her yerde kullanılabilir.</p>
