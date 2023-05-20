@@ -5,7 +5,7 @@
 <br><br>
 
 
-<h2 id="keywordvsoperator">Keywordlerin operatörlerle ne farkı vardır?</h2>
+<h2>Keywordlerin operatörlerle ne farkı vardır?</h2>
 <p>Operatörler, esas olarak belirli bir operasyonu / eylemi üstlenen yapılardır.</p>
 <p>
 Keywordler ise daha geniş bir kavramdır. Bir keyword bazen bir operatörü temsil edebilir. 
@@ -19,6 +19,7 @@ farklı amaçlara, modellemeye hizmet ediyorsa bu bir keyword'dür. (örneğin s
 <br><br>
 
 
+
 # Manevratik komutlar
 #### Kodu durdurmak, devamını okumamak, var olan bir döngüden çıkış yapmak yahut komple metodu sonlandırmak için kullanılan komutlardır.
 #### Manevratik komutlar, yapamadığımız şeyleri yapmamızı sağlayan komutlar değildir. Yapabileceğimiz manevraları / kodun yönlendirmelerini daha efektif daha profesyonel bir şekilde yapmamızı sağlayan komutlardır.
@@ -28,6 +29,7 @@ farklı amaçlara, modellemeye hizmet ediyorsa bu bir keyword'dür. (örneğin s
 
 * <a href="#breakcommand">Break komutu nedir?</a>
 * <a href="#continuecommand">Continue komutu nedir?</a>
+* <a href="#returncommand">Return komutu nedir?</a>
 
 <br><br>
 
@@ -62,7 +64,14 @@ for (int i = 1; i <= 100; i++)
     Console.WriteLine(i);
 }
 ```
+<br><br>
 
+
+<h2 id="returncommand">Return komutu nedir?</h2>
+<p>Metot içerisinde her yerde kullanılabilir, erişilebilir bir keyword'dür. İki işlevi vardır:</p>
+<p>1- Nerede çağrılırsa çağrılsın bulunduğu metottan çıkış yapar. Yani metodu sonlandırır.</p>
+<p>2- Metotlarda geriye bir değer döndürür.</p>
+<br><br>
 
 
 
