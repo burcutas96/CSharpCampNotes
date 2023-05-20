@@ -19,6 +19,9 @@ farklı amaçlara, modellemeye hizmet ediyorsa bu bir keyword'dür. (örneğin s
 <br><br>
 
 
+* <a href="#extrainformation">(Ekstra Bilgi) Döngülerde Noktalı Virgül Operatörü İle Salt İfade Tanımlamaları</a>
+<br><br>
+
 
 # Manevratik komutlar
 #### Kodu durdurmak, devamını okumamak, var olan bir döngüden çıkış yapmak yahut komple metodu sonlandırmak için kullanılan komutlardır.
@@ -91,8 +94,24 @@ goto a;
 <br><br>
 
 
+<h2 id="extrainformation">(Ekstra Bilgi) Döngülerde Noktalı Virgül Operatörü İle Salt İfade Tanımlamaları</h2>
+<p>
+Bazen içi boş sonsuz döngülere ihtiyacımız olabilir. Bu durumda normal döngü gövdelerini 
+kullanabileceğimiz gibi scope'suz aşağıdaki şekilde de kullanabiliriz.
+</p>
 
+```c#
+while(true);
+```
 
+```c#
+for(; ;);
+```
+
+```c#
+do;
+while(true);
+```
 
 
 
