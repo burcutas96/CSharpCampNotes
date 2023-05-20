@@ -30,7 +30,7 @@ farklı amaçlara, modellemeye hizmet ediyorsa bu bir keyword'dür. (örneğin s
 * <a href="#breakcommand">Break komutu nedir?</a>
 * <a href="#continuecommand">Continue komutu nedir?</a>
 * <a href="#returncommand">Return komutu nedir?</a>
-
+* <a href="#gotocommand">Goto komutu nedir?</a>
 <br><br>
 
 
@@ -71,6 +71,23 @@ for (int i = 1; i <= 100; i++)
 <p>Metot içerisinde her yerde kullanılabilir, erişilebilir bir keyword'dür. İki işlevi vardır:</p>
 <p>1- Nerede çağrılırsa çağrılsın bulunduğu metottan çıkış yapar. Yani metodu sonlandırır.</p>
 <p>2- Metotlarda geriye bir değer döndürür.</p>
+<br><br>
+
+
+<h2 id="gotocommand">Goto komutu nedir?</h2>
+<p>Kodun senkronizasyonunu bozup akışı ters istikamete almamızı sağlayan manevratik bir komuttur.</p>
+<p>Davranışsal olarak döngülere benzerler.</p>
+<p>Switch case yapılanmasında dahili olarak kullanılan bu komut, metot içerisinde her yerde kullanılabilir.</p>
+<p>- Goto keyword'ünü, switch case dışında nasıl kullanabileceğimize dair bir prototip:</p>
+
+```c#
+a:
+//...
+
+
+goto a;
+```
+<p>Yukarıdaki örnekte sonsuz bir döngüye girilmiş olacak.</p>
 <br><br>
 
 
