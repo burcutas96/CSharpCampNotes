@@ -23,7 +23,15 @@ temelini teşkil etmektedirler ve gelişmelerine katkıda bulunmaktadırlar.
 type[] name = new type[10]
 ```
 <p>C# dilinde köşeli paranteze "indexer" denmektedir.</p>
-
-
+<br>
+<p>
+- Dizi tanımlama sürecinde eleman sayısı mecburi girilmek zorundadır. Yani dizide 
+çalışılacak değer adedi başta bildirilmelidir. Bu durum bir sınırlılıktır.
+</p>
+<p>
+- Bir dizi tanımlaması yapıldığı an bellekte, o diziyi kullansakta kullanmasakta verilen 
+eleman sayısı kadar alan tahsisinde bulunulur. Bu durum bir sınırlılıktır.
+</p>
+<p>- Dizilere alan tahsisi yapıldığında ilgili alanlara türüne uygun default değerler atanır.</p>
 
 
