@@ -1,4 +1,4 @@
-# Döngüler
+# Diziler
 <p>- Tek bir değişken altında birden fazla "aynı türde" değeri toplamamızı sağlayan veri kümelerine dizi denmektedir.</p>
 <p>- Diziler içerisinde birden fazla aynı türde değerleri tutabilen yapılardır.</p>
 <p>- Eğer farklı türlerdeki değerleri dizi ile tutmak istiyorsak dizinin türünü object olarak ayarlamalıyız.</p>
