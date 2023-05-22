@@ -33,5 +33,14 @@ type[] name = new type[10]
 eleman sayısı kadar alan tahsisinde bulunulur. Bu durum bir sınırlılıktır.
 </p>
 <p>- Dizilere alan tahsisi yapıldığında ilgili alanlara türüne uygun default değerler atanır.</p>
+<p>- Diziler, array sınıfından türetilmektedir.</p>
+<p>- Dolayısıyla dizilerde array sınıfından gelen metotlar ve özellikler mevcuttur.</p>
+<br>
 
+
+## Array sınıfı clear metodu
+<p>
+Clear metodu, dizi içerisindeki tüm elemanları siliyor diye bilinir. Ancak bu yanlıştır. 
+Dizi içerisindeki elemanlara, dizinin türüne uygun default değerleri atayan bir metottur.
+</p>
 
