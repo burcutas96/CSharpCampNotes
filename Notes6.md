@@ -43,4 +43,21 @@ eleman sayısı kadar alan tahsisinde bulunulur. Bu durum bir sınırlılıktır
 Clear metodu, dizi içerisindeki tüm elemanları siliyor diye bilinir. Ancak bu yanlıştır. 
 Dizi içerisindeki elemanlara, dizinin türüne uygun default değerleri atayan bir metottur.
 </p>
+<br>
+
+
+## Çok boyutlu / biçimli / dereceli diziler
+<p>Çok boyutlu diziler, oyun programlamada yahut yüksek istatiksel çalışmalarda kullanılan bir yapıdır.</p>
+<p>Çok boyutlu bir dizinin eleman sayısı, bütün boyutların eleman sayısı çarpılarak elde edilir.</p>
+<p>Örneğin;</p>
+
+```c#
+int[,,] sayilar = new int[2,2,4];
+Console.WriteLine(sayilar.Length);  //16
+```
+<p>Yukarıdaki dizinin eleman sayısı 2*2*4'den 16 sonucunu verecektir.</p>
+
+
+
+
 
