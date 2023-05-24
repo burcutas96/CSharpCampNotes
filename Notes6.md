@@ -56,8 +56,19 @@ int[,,] sayilar = new int[2,2,4];
 Console.WriteLine(sayilar.Length);  //16
 ```
 <p>Yukarıdaki dizinin eleman sayısı 2*2*4'den 16 sonucunu verecektir.</p>
+<br>
 
 
+## Dizi içerisinde dizi tanımlama / Düzensiz diziler / Dizi dizileri
+<p>Düzensiz diziler, her bir elemanı kendi içerisinde farklı bir dizi barındıran dizilerdir.</p>
+<p>Çok boyutlu dizilerden tek farkı; çok boyutlu dizilerin sütun sayılarının sabit, düzensiz dizilerin ise sütun sayılarının değişken olmasıdır.</p>
 
+```c#
+int[][] sayilar = new int[3][];
+sayilar[0] = new int[3] {3, 5, 7};    //sayilar dizisinin 0. dizisine 3 elemanlı bir dizi ekledim. 
+sayilar[1] = new int[6] {1, 2, 28, 9, 5, 12};    //sayilar dizisinin 1. dizisine 6 elemanlı bir dizi ekledim. 
 
+Console.WriteLine(sayilar[0][2]);   //sayilar dizisinin 0. dizisindeki 2. elemanı konsola yazdırıyorum. 
+                                    //Yani çıktı olarak 7'yi elde edeceğim.
+```
 
