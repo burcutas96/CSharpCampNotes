@@ -6,6 +6,7 @@
 * <a href="#nullvsemptyimportant">Null ve empty arasındaki önemli fark!</a>
 * <a href="#isnullorempty">IsNullOrEmpty() Fonksiyonu</a>
 * <a href="#isnullorwhitespace">IsNullOrWhiteSpace() Fonksiyonu</a>
+* <a href="#string">String neden referans türlüdür?</a>
 <br><br>
 
 
@@ -109,6 +110,36 @@ if (string.IsNullOrWhiteSpace(x))  //Burada if bloğu tetiklenmeyecektir.
     //Operasyonlar...
 }
 ```
+<br><br>
+
+
+<h2 id="string">String neden referans türlüdür?</h2>
+<p>
+- String ifadeler esasında bir char dizisidir. Yani yazılım açısından string bir ifade yoktur. Esasında karakterlerin 
+bir araya gelmiş hali vardır. Dolayısıyla karakterleri bir araya getirebilecek yegane şey bir dizidir. String ifadeler;
+yazılımsal açıdan, bilgisayarda bir char dizisi olarak tarif edilmekte ve o şekilde tutulmaktadırlar.
+</p>
+<p>
+- String ifadeler; özünde bir char dizisi, yani dizi olmasından dolayı referans türlü 
+değişkenlerdir. Çünkü diziler referans türlüdür, nesnedir. Yani heap'te tutulurlar.
+</p>
+<p>
+- String ifadeler char dizisi olduklarından dolayı yapısal olarak her bir karakter baştan sona 
+indexlenmektedir. Dolayısıyla string bir ifade üzerinde indexer operatörünü de kullanabilmekteyiz.
+</p>
+<p>- Peki string bir değişkeni Array türüyle karşılayabilir miyiz?</p>
+
+```c#
+string metin = "Ben bir metinim.";
+Array array = metin;
+```
+<p>
+- Karşılayamayız. Çünkü string özünde bir char dizisi olabilir ancak yapısal olarak 
+yine de string olduğu için Array referansına atanamaz, Array ile karşılanamaz.
+</p>
+
+
+
 
 
 
