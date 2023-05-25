@@ -2,7 +2,10 @@
 #### String, programlama dilinde referans türlü olduğu halde bir keyword olan tek değerdir.
 #### Referans türlü değişkenlerde, sadece string değişkeni bir keyword'dür. String haricindeki tüm referans türlü değişkenlerin bir keyword'ü yoktur. Yani keyword değildirler.
 
-<a href="nullvsempty">Null ve empty farkı</a>
+* <a href="#nullvsempty">Null ve empty farkı</a>
+* <a href="#nullvsemptyimportant">Null ve empty arasındaki önemli fark!</a>
+* <a href="#isnullorempty">IsNullOrEmpty() Fonksiyonu</a>
+* <a href="#isnullorwhitespace">IsNullOrWhiteSpace() Fonksiyonu</a>
 <br><br>
 
 
@@ -24,7 +27,7 @@ heap'te bir karşılığı yok. Herhangi bir değeri referans etmiyor.
 </p>
 <p>
 Değer türlü değişkenlere null değerini atayabilmemiz için nullable (?) operatörünü kullanmamız gerekiyor. Çünkü değer 
-türlü değişkenler null alamıyor. En kötü ihitmalle default değerlerini atamak zorundayız. Aksi taktirde hata alırız.
+türlü değişkenler null alamıyor. En kötü ihtimalle default değerlerini atamak zorundayız. Aksi taktirde hata alırız.
 </p>
 
 ```c#
@@ -59,7 +62,58 @@ değerini atayabilmemiz için ya "" bu ifadeyi ya da string.Empty özelliğini k
 string a = "";
 string b = string.Empty; 
 ```
-<p>Yukarıdaki her iki varyasyonda da string değişkenlere empty değerlerini atamış oluruz.</p>
+<p>Yukarıdaki her iki varyasyonda da string değişkenlere empty değerlerini atamış oluruz.</p><br><br>
+
+
+<h2 id="nullvsemptyimportant">Null ve empty arasındaki önemli fark!</h2>
+<p>
+Null olan bir değer üzerinde işlem yapmaya çalıştığımızda run time hatası meydana 
+gelirken empty olan bir değişken üzerinde herhangi bir işlem gerçekleştirebiliriz.
+</p><br><br>
+
+
+<h2 id="isnullorempty">IsNullOrEmpty() Fonksiyonu</h2>
+<p>Elimizdeki string ifadelerin işleme tabii tutulmadan önce kesinlikle kontrol edilmesi gerekir.</p>
+<p>
+IsNullOrEmpty() fonksiyonu, elimizdeki string ifadenin null yahut empty olup olmama durumları hakkında bir kontrol 
+yapar ve geriye bool türde sonuç döndürür. Eğer ki değer null ya da empty ise geriye true, değilse false döndürür.
+</p>
+
+```c#
+string x = string.Empty;
+if (string.IsNullOrEmpty(x))  //x değişkeni empty olduğu için if bloğuna girilecektir.
+{
+    //Operasyonlar...
+}
+```
+<br><br>
+
+
+<h2 id="isnullorwhitespace">IsNullOrWhiteSpace() Fonksiyonu</h2>
+<p>
+IsNullOrWhiteSpace() fonksiyonu, elimizdeki string ifadenin null, empty veya boşluk karekterlerini içerip içermemesi durumunu 
+kontrol eden bir fonksiyondur. Eğer bu üç durumdan herhangi birini içeriyorsa geriye true döner, içermiyorsa false döner.
+</p>
+<p>Örneğin;</p>
+
+```c#
+string x = "  ";
+if (string.IsNullOrWhiteSpace(x))  //x değişkeni boşluk karakterlerini içerdiği için if bloğu tetiklenecektir.
+{
+    //Operasyonlar...
+}
+
+string y = "sebepsiz boş yere ayrılacaksan";
+if (string.IsNullOrWhiteSpace(x))  //Burada if bloğu tetiklenmeyecektir.
+{
+    //Operasyonlar...
+}
+```
+
+
+
+
+
 
 
 
