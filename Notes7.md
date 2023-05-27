@@ -7,6 +7,7 @@
 * <a href="#isnullorempty">IsNullOrEmpty() Fonksiyonu</a>
 * <a href="#isnullorwhitespace">IsNullOrWhiteSpace() Fonksiyonu</a>
 * <a href="#string">String neden referans türlüdür?</a>
+* <a href="#arraysegment">Array segment nedir?</a>
 <br><br>
 
 
@@ -136,16 +137,39 @@ Array array = metin;
 <p>
 - Karşılayamayız. Çünkü string özünde bir char dizisi olabilir ancak yapısal olarak 
 yine de string olduğu için Array referansına atanamaz, Array ile karşılanamaz.
+</p><br><br>
+
+
+<h2 id="arraysegment">Array segment nedir?</h2>
+<p>Bir dizinin belirli bir aralığı üzerinde dilin getirdiği fonksiyonlarla herhangi bir işlem yaptığımızda, mimarinin default davranışı;
+ilgili diziyi kopyalamak ve bu yeni dizi üzerinde işlemler yapmak olacaktır. Ve bu değişiklikler orijinal diziye yansıtılmayacaktır.
+</p>
+<p>
+Örneğin; aşağıdaki sayilar dizisindeki 2. ve 5. elemanların arasındaki değerler 
+üzerinde bir işlem yaptığımızda bu değişiklik orijinal diziyi etkilemeyecektir.
 </p>
 
-
-
-
-
-
-
-
-
+```c#
+int[] sayilar = {10, 20, 30, 40, 50, 60, 70, 80};
+int[] sayilar2 = sayilar[1..5];
+sayilar2[0] *= 10;
+Console.WriteLine(sayilar[1]);
+```
+<p>
+Eğer bu değişikliklerin ilgili dizi üzerinde uygulanmasını istemiyorsak o zaman 
+bir sorun yok ancak uygulanmasını istiyorsak array segment'i kullanmalıyız.
+</p><br>
+<p>
+Array segment, bir dizinin bütününden ziyade belirli bir kısmına yahut parçasına ihtiyaç dahilinde ilgili diziyi 
+kopyalamak yerine bağımsız bir referans ile erişmemizi ve böylece salt bir şekilde temsil etmemizi sağlayan bir yapıdır.
+</p>
+<p>
+Böylelikle elimizdeki ram'i, işlemciyi yani kaynakları daha az tüketeceğimizden 
+dolayı daha hızlı, daha performanslı bir çalışma gerçekleştirmiş oluyoruz.
+</p>
+<p>
+Verilerimizin türetilmemesi gereken durumlarda kesinlikle tercih edilmesi gereken bir yaklaşımdır.
+</p>
 
 
 
