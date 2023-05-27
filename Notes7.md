@@ -7,7 +7,8 @@
 * <a href="#isnullorempty">IsNullOrEmpty() Fonksiyonu</a>
 * <a href="#isnullorwhitespace">IsNullOrWhiteSpace() Fonksiyonu</a>
 * <a href="#string">String neden referans türlüdür?</a>
-* <a href="#arraysegment">Array segment nedir?</a>
+* <a href="#arraysegment1">Array segment nedir?</a>
+* <a href="#arraysegment2">Array segment nasıl oluşturulur?</a>
 <br><br>
 
 
@@ -140,9 +141,9 @@ yine de string olduğu için Array referansına atanamaz, Array ile karşılanam
 </p><br><br>
 
 
-<h2 id="arraysegment">Array segment nedir?</h2>
+<h2 id="arraysegment1">Array segment nedir?</h2>
 <p>Bir dizinin belirli bir aralığı üzerinde dilin getirdiği fonksiyonlarla herhangi bir işlem yaptığımızda, mimarinin default davranışı;
-ilgili diziyi kopyalamak ve bu yeni dizi üzerinde işlemler yapmak olacaktır. Ve bu değişiklikler orijinal diziye yansıtılmayacaktır.
+ilgili diziyi kopyalamak / türetmek ve bu yeni dizi üzerinde işlemler yapmak olacaktır. Ve bu değişiklikler orijinal diziye yansıtılmayacaktır.
 </p>
 <p>
 Örneğin; aşağıdaki sayilar dizisindeki 2. ve 5. elemanların arasındaki değerler 
@@ -169,7 +170,43 @@ dolayı daha hızlı, daha performanslı bir çalışma gerçekleştirmiş oluyo
 </p>
 <p>
 Verilerimizin türetilmemesi gereken durumlarda kesinlikle tercih edilmesi gereken bir yaklaşımdır.
+</p><br><br>
+
+
+<h2 id="arraysegment2">Array segment nasıl oluşturulur?</h2>
+<p>Array segment'in kullanımı:</p>
+
+```c#
+ArraySegment<T> arraySegment = new ArraySegment<T>(dizininAdi);  
+```
+<p>Yukarıdaki çalışma ile herhangi bir tipteki dizinin referansını array segment ile tutmuş oluyoruz.</p><br>
+<p>Bir önceki başlıkta bahsedilen sayilar dizisi üzerinde herhangi bir işlem yapmak istiyorsak şu şekilde bir işlem yapmalıyız:</p>
+
+```c#
+ArraySegment<int> arraySegment = new ArraySegment<int>(sayilar);
+//sayilar dizisinin bütün elemanlarını temsil eder. Yani bütün elemanları üzerinde bir işlem yapabiliriz.
+```
+<p>Eğer dizinin sadece belirli bir aralığı üzerinde bir işlem yapmak istiyorsak:</p>
+
+```c#
+ArraySegment<int> arraySegment = new ArraySegment<int>(sayilar, 1, 5);
+//sayilar dizisinin 2. ve 5. elemanları arasındaki değerleri temsil eder. 
+//Yani 2. ve 5. elemanları arasındaki değerler üzerinde bir işlem yapabiliriz.
+```
+<p>
+Ancak yukarıdaki işlemde önemli bir nokta vardır. O da şu ki: Belirli bir değer aralığını 
+temsil eden segment'ler dizinin bütün elemanlarını tutar. Yani dizinin kendisini yine referans eder. 
+Amma velakin sadece belirlenen aralık üzerinde bir işlem gerçekleştirir.
+</p><br>
+<p>
+Görüldüğü üzere array segment'ler referans mantığıyla çalışmaktadır. Bu sebeple segment üzerinde 
+yapılan değişiklik, ilgli diziyi; ilgili dizi üzerinde yapılan değişiklik de segment'i etkilemektedir.
 </p>
+
+
+
+
+
 
 
 
