@@ -7,8 +7,9 @@
 * <a href="#isnullorempty">IsNullOrEmpty() Fonksiyonu</a>
 * <a href="#isnullorwhitespace">IsNullOrWhiteSpace() Fonksiyonu</a>
 * <a href="#string">String neden referans türlüdür?</a>
-* <a href="#arraysegment1">Array segment nedir?</a>
-* <a href="#arraysegment2">Array segment nasıl oluşturulur?</a>
+* <a href="#arraysegment1">ArraySegment nedir?</a>
+* <a href="#arraysegment2">ArraySegment nasıl oluşturulur?</a>
+* <a href="#arraysegment3">ArraySegment Slicing (Dilimleme)</a>
 <br><br>
 
 
@@ -141,7 +142,7 @@ yine de string olduğu için Array referansına atanamaz, Array ile karşılanam
 </p><br><br>
 
 
-<h2 id="arraysegment1">Array segment nedir?</h2>
+<h2 id="arraysegment1">ArraySegment nedir?</h2>
 <p>Bir dizinin belirli bir aralığı üzerinde dilin getirdiği fonksiyonlarla herhangi bir işlem yaptığımızda, mimarinin default davranışı;
 ilgili diziyi kopyalamak / türetmek ve bu yeni dizi üzerinde işlemler yapmak olacaktır. Ve bu değişiklikler orijinal diziye yansıtılmayacaktır.
 </p>
@@ -173,7 +174,7 @@ Verilerimizin türetilmemesi gereken durumlarda kesinlikle tercih edilmesi gerek
 </p><br><br>
 
 
-<h2 id="arraysegment2">Array segment nasıl oluşturulur?</h2>
+<h2 id="arraysegment2">ArraySegment nasıl oluşturulur?</h2>
 <p>Array segment'in kullanımı:</p>
 
 ```c#
@@ -201,9 +202,26 @@ Amma velakin sadece belirlenen aralık üzerinde bir işlem gerçekleştirir.
 <p>
 Görüldüğü üzere array segment'ler referans mantığıyla çalışmaktadır. Bu sebeple segment üzerinde 
 yapılan değişiklik, ilgli diziyi; ilgili dizi üzerinde yapılan değişiklik de segment'i etkilemektedir.
+</p><br><br>
+
+
+<h2 id="arraysegment3">ArraySegment Slicing (Dilimleme)</h2>
+<p>Bir dizi üzerinde birden fazla parçada çalışacaksak eğer her bir parçayı ayrı bir ArraySegment ile tanımlayabiliriz.</p>
+<p>
+Bu tanımlamaların dışında diziyi tek bir arraysegment ile referans edip ilgili parçaları o segment 
+üzerinden de talep edebiliriz. Yani ilgili diziyi tek bir segment üzerinden daha rahat bir şekilde 
+parçalayabiliriz. Bu durumda bize yazılımsal açıdan efektiflik kazandırmış olacaktır.
 </p>
 
+```c#
+int[] sayilar = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
 
+ArraySegment<int> arraySegment = new ArraySegment<int>(sayilar);
+
+ArraySegment<int> segment1 = arraySegment.Slice(0, 3);  //(10, 20, 30) elemanlarını tutacak.
+ArraySegment<int> segment2 = arraySegment.Slice(4, 2);  //(50, 60) elemanlarını tutacak.
+ArraySegment<int> segment3 = arraySegment.Slice(5, 4);  //(60, 70, 80, 90) elemanlarını tutacak.
+```
 
 
 
