@@ -11,6 +11,7 @@
 * <a href="#arraysegment2">ArraySegment nasıl oluşturulur?</a>
 * <a href="#arraysegment3">ArraySegment Slicing (Dilimleme)</a>
 * <a href="#stringsegment1">StringSegment nedir?</a>
+* <a href="#stringsegment2">StringSegment nasıl kullanılır?</a>
 <br><br>
 
 
@@ -231,7 +232,31 @@ ArraySegment<int> segment3 = arraySegment.Slice(5, 4);  //(60, 70, 80, 90) elema
 <p>
 ArraySegment gibi yeni bir string üzerinde işlem yapmak yerine ilgili dizi üzerinde işlem 
 yapmamızı sağlar. Böylelikle StringSegment'de yaptığımız işlemler orijinal diziye de yansıtılacaktır.
-</p>
+</p><br><br>
+
+
+<h2 id="stringsegment2">StringSegment nasıl kullanılır?</h2>
+<p>StringSegment türünü kullanabilmek için uygulamaya Microsoft.Extensions.Primitives paketinin yüklenmesi gerekmektedir.</p>
+
+```c#
+using Microsoft.Extensions.Primitives;
+
+string text = "Ölüme gidelim dedin de mazot mu yok dedik.";
+
+StringSegment segment1 = new StringSegment(text);
+StringSegment segment2 = new StringSegment(text, 2, 5);
+Console.WriteLine(segment2);   
+//StringSegment türü, direkt string'e dönüştürülebildiği için değişken üzerinden yazdırma işlemini yapabiliyoruz.
+```
+
+
+
+
+
+
+
+
+
 
 
 
