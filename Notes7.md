@@ -10,6 +10,7 @@
 * <a href="#arraysegment1">ArraySegment nedir?</a>
 * <a href="#arraysegment2">ArraySegment nasıl oluşturulur?</a>
 * <a href="#arraysegment3">ArraySegment Slicing (Dilimleme)</a>
+* <a href="#stringsegment1">StringSegment nedir?</a>
 <br><br>
 
 
@@ -159,10 +160,10 @@ Console.WriteLine(sayilar[1]);
 ```
 <p>
 Eğer bu değişikliklerin ilgili dizi üzerinde uygulanmasını istemiyorsak o zaman 
-bir sorun yok ancak uygulanmasını istiyorsak array segment'i kullanmalıyız.
+bir sorun yok ancak uygulanmasını istiyorsak ArraySegment'i kullanmalıyız.
 </p><br>
 <p>
-Array segment, bir dizinin bütününden ziyade belirli bir kısmına yahut parçasına ihtiyaç dahilinde ilgili diziyi 
+ArraySegment, bir dizinin bütününden ziyade belirli bir kısmına yahut parçasına ihtiyaç dahilinde ilgili diziyi 
 kopyalamak yerine bağımsız bir referans ile erişmemizi ve böylece salt bir şekilde temsil etmemizi sağlayan bir yapıdır.
 </p>
 <p>
@@ -175,12 +176,12 @@ Verilerimizin türetilmemesi gereken durumlarda kesinlikle tercih edilmesi gerek
 
 
 <h2 id="arraysegment2">ArraySegment nasıl oluşturulur?</h2>
-<p>Array segment'in kullanımı:</p>
+<p>ArraySegment'in kullanımı:</p>
 
 ```c#
 ArraySegment<T> arraySegment = new ArraySegment<T>(dizininAdi);  
 ```
-<p>Yukarıdaki çalışma ile herhangi bir tipteki dizinin referansını array segment ile tutmuş oluyoruz.</p><br>
+<p>Yukarıdaki çalışma ile herhangi bir tipteki dizinin referansını ArraySegment ile tutmuş oluyoruz.</p><br>
 <p>Bir önceki başlıkta bahsedilen sayilar dizisi üzerinde herhangi bir işlem yapmak istiyorsak şu şekilde bir işlem yapmalıyız:</p>
 
 ```c#
@@ -200,7 +201,7 @@ temsil eden segment'ler dizinin bütün elemanlarını tutar. Yani dizinin kendi
 Amma velakin sadece belirlenen aralık üzerinde bir işlem gerçekleştirir.
 </p><br>
 <p>
-Görüldüğü üzere array segment'ler referans mantığıyla çalışmaktadır. Bu sebeple segment üzerinde 
+Görüldüğü üzere ArraySegment'ler referans mantığıyla çalışmaktadır. Bu sebeple segment üzerinde 
 yapılan değişiklik, ilgli diziyi; ilgili dizi üzerinde yapılan değişiklik de segment'i etkilemektedir.
 </p><br><br>
 
@@ -208,7 +209,7 @@ yapılan değişiklik, ilgli diziyi; ilgili dizi üzerinde yapılan değişiklik
 <h2 id="arraysegment3">ArraySegment Slicing (Dilimleme)</h2>
 <p>Bir dizi üzerinde birden fazla parçada çalışacaksak eğer her bir parçayı ayrı bir ArraySegment ile tanımlayabiliriz.</p>
 <p>
-Bu tanımlamaların dışında diziyi tek bir arraysegment ile referans edip ilgili parçaları o segment 
+Bu tanımlamaların dışında diziyi tek bir ArraySegment ile referans edip ilgili parçaları o segment 
 üzerinden de talep edebiliriz. Yani ilgili diziyi tek bir segment üzerinden daha rahat bir şekilde 
 parçalayabiliriz. Bu durumda bize yazılımsal açıdan efektiflik kazandırmış olacaktır.
 </p>
@@ -222,6 +223,15 @@ ArraySegment<int> segment1 = arraySegment.Slice(0, 3);  //(10, 20, 30) elemanlar
 ArraySegment<int> segment2 = arraySegment.Slice(4, 2);  //(50, 60) elemanlarını tutacak.
 ArraySegment<int> segment3 = arraySegment.Slice(5, 4);  //(60, 70, 80, 90) elemanlarını tutacak.
 ```
+<br><br>
+
+
+<h2 id="stringsegment1">StringSegment nedir?</h2>
+<p>StringSegment, ArraySegment'in string değerler nezdindeki muadilidir.</p>
+<p>
+ArraySegment gibi yeni bir string üzerinde işlem yapmak yerine ilgili dizi üzerinde işlem 
+yapmamızı sağlar. Böylelikle StringSegment'de yaptığımız işlemler orijinal diziye de yansıtılacaktır.
+</p>
 
 
 
