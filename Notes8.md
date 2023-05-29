@@ -1,5 +1,6 @@
 * <a href="#stringbuilder">StringBuilder Sınıfı Nedir?</a>
-* <a href="#stringbuilder">Koleksiyonlar Nelerdir? Diziler Varken Neden Koleksiyon Yapıları İnşa Edilmiştir?</a>
+* <a href="#collections">Koleksiyonlar Nelerdir? Diziler Varken Neden Koleksiyon Yapıları İnşa Edilmiştir?</a>
+* <a href="#arrayList">ArrayList Nedir?</a>
 <br><br>
 
 
@@ -26,7 +27,7 @@ builder.Append(soyisim);
 <br><br>
 
 
-<h2 id="stringbuilder">Koleksiyonlar Nelerdir? Diziler Varken Neden Koleksiyon Yapıları İnşa Edilmiştir?</h2>
+<h2 id="collections">Koleksiyonlar Nelerdir? Diziler Varken Neden Koleksiyon Yapıları İnşa Edilmiştir?</h2>
 <p>
 Koleksiyonlar, dizilerin daha gelişmiş yapılanmasıdır. İkisinde de birden fazla veriyi tek bir dizi içerisinde tutup yönetebiliyoruz. Yani ikisinde de amaç aynı. Peki neden diziler varken koleksiyonlara ihtiyaç duyulmuş? Aralarındaki fark ne?
 </p>
@@ -50,9 +51,20 @@ Ancak koleksiyonlarda böyle bir durum söz konusu değil. Az önce de bahsetti�
 </p>
 <p>
 Ancak koleksiyonlarda istediğimiz zaman eleman sayısını arttırabiliyoruz. Böylelikle dizilerdeki bu sınırlılığa da bir çözüm getirilmiş oldu.
+</p><br><br>
+
+
+<h2 id="arrayList">ArrayList Nedir?</h2>
+<p> Aslında koleksiyonlar içerisinde birçok koleksiyon barındırır ve bu koleksiyonların ilki ArrayList koleksiyonudur diyebiliriz.</p>
+<p>
+ArrayList her ne kadar dizilerdeki sınırlılıkları ortadan kaldıran bir koleksiyon olsa da 
+kendine has sınırlılıkları mevcuttur. Bu sebepten ötürü de diğer koleksiyonlar ortaya çıkmıştır.
 </p>
-
-
+<p>ArrayList'in kendine has sınırlılığı ise verilen datayı boxing işlemine tabi tutmasıdır.</p>
+<p>
+ArrayList içerisindeki herhangi bir veriyi talep etttiğimizde ilgili veri object türünde getirilecektir. 
+Dolayısıyla verinin üzerinde kendi türüne özgü işlem yapabilmek için veriye unboxing işlemini uygulamamız gerekecektir.
+</p>
 
 
 
