@@ -214,10 +214,15 @@ do
 <p>
 İterasyon: İterasyon mantığında ne kombinasyon ne de şart vardır. İterasyonda; sonraki veri, öteki veri anlamına gelen itere etme fiili vardır.
 Bir veri kümesi üzerinde işlem yapmamızı / verileri elde etmemizi sağlayan yapılanmadır. 
+</p><br>
+<p>
+Fark 1: Herhangi bir veri kümesi üzerinde döngü ile dönerken istediğimiz noktadan başlayabiliyorken 
+iterasyonda böyle bir durum söz konusu değildir. İterasyon baştan başlar kümenin sonuna kadar gider.
 </p>
 <p>
-Aralarındaki ayrı bir fark ise; herhangi bir veri kümesi üzerinde döngü ile dönerken istediğimiz noktadan 
-başlayabilirken iterasyonda böyle bir durum söz konusu değildir. İterasyon baştan başlar kümenin sonuna kadar gider.
+Fark 2: Döngülerde illaki bir veri kümesiyle çalışmak zorunda değiliz. Verinin bir koleksiyon ya da dizi olması zorunlu değil. 
+Örneğin döngülerde string bir ifade üzerinde de işlem yapabiliriz. Ancak iterasyon mantığında böyle bir şey yoktur. 
+Elimizde illaki bir veri kaynağı olmak zorunda. Veri kümesi olmadığı sürece foreach'in hiçbir anlamı yoktur.
 </p>
 
 
